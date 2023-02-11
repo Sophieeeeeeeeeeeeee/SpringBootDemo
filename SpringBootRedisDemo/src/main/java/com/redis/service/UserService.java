@@ -7,8 +7,8 @@ import java.util.List;
 
 
 /**
+ * @author Sophiee
  * 用户service借口
- * @author csy
  */
 public interface UserService {
     /**

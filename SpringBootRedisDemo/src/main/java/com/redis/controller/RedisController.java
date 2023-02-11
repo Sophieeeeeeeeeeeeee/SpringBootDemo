@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
 /**
- * @Auther: csy
+ * @author Sophiee
  * @Description: redis呼出控制类
  */
 @Controller
@@ -29,7 +29,7 @@ public class RedisController extends BaseController {
     ConvertUtils convertUtils;
 
     /**
-     * @auther: csy
+     * @author Sophiee
      * @param: []
      * @return: 画面相对Path
      * @Description: 存储和读取测试
@@ -41,8 +41,7 @@ public class RedisController extends BaseController {
     }
 
     /**
-     * @auther: csy
-     * @param: []
+     * @author Sophiee
      * @return: org.springframework.ui.ModelMap
      * @Description: 存储和读取测试
      */
@@ -62,7 +61,7 @@ public class RedisController extends BaseController {
     }
 
     /**
-     * @auther: csy
+     * @author Sophiee
      * @return: org.springframework.ui.ModelMap
      * @Description: 存储和读取用户信息
      */

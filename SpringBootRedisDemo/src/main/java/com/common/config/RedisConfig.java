@@ -20,8 +20,8 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 import java.time.Duration;
 
 /**
+ * @auther: Sophiee
  * @ClassName: RedisConfig
- * @Auther: csy
  * @Description: Redis配置属性
  */
 @Configuration
@@ -66,7 +66,6 @@ public class RedisConfig {
     private boolean testWhileIdle;
 
     /**
-     * @param: []
      * @return: org.springframework.data.redis.connection.jedis.JedisConnectionFactory
      * @Description: Jedis配置
      */
@@ -96,7 +95,6 @@ public class RedisConfig {
     }
 
     /**
-     * @param: []
      * @return: org.springframework.data.redis.serializer.RedisSerializer
      * @Description: 引入自定义序列化
      */

@@ -1,7 +1,7 @@
 package com.common.utils;
 
 /**
- * @auther: csy
+ * @author Sophiee
  * @Description: 库分类
  */
 public class RedisConstants {

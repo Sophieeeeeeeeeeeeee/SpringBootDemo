@@ -1,7 +1,7 @@
 package com.common.utils;
 
 /**
- * @author csy
+ * @author Sophiee
  * @Description: 处理结果集
  */
 public class ResultConstants {

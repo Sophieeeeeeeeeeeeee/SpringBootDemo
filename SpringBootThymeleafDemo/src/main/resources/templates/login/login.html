@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http:www.ultraq.net.nz/thymeleaf/layout">
+<!-- 	layout:decorate="/common/layout"> -->
+<meta charset="UTF-8">
+<head>
+    <title th:text="${title}"></title>
+    <script src="./js/jquery-3.5.1.js"></script>
+<script>
+function doLogin(){
+	$("#login").click();
+}
+
+function setMode(mode){
+	$("#action_mode").val(mode);
+}
+
+</script>
+</head>
+<body>
+<h1>登录</h1>
+<form th:action="@{/login}" th:object="${loginForm}" th:method="post">
+    用户名：<input type="text" th:field="*{userId}"><br>
+    密 码：<input type="password" th:field="*{password}"><br>
+    <button type="button" class="btn" onclick="doLogin();" value="登录" style="width:50px;height:30px;"></button>
+    <input type="hidden" id="action_mode" th:field="*{mode}" />
+    <input id="login" type="submit" value="登录" onclick="setMode('login');" style="display:none;" />
+</form>
+</body>
+</html>

@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @auther: csy
+ * @author Sophiee
  * @Description: 数据类型转换工具类
  */
 

@@ -8,8 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 /**
+ * @author Sophiee
  * @ClassName: UserEntity
- * @Auther: csy
  * @Description: 用户信息
  */
 @Entity

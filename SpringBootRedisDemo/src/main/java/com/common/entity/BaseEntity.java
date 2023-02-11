@@ -5,7 +5,7 @@ import java.util.Date;
 import javax.persistence.*;
 
 /**
- * @author csy
+ * @author Sophiee
  */
 @MappedSuperclass
 public class BaseEntity {
@@ -44,7 +44,4 @@ public class BaseEntity {
 	public void setId(String id) {
 		this.id = id;
 	}
-
-
-
 }

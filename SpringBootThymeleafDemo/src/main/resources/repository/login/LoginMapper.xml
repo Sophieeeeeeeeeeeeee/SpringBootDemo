@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.login.repository.LoginMapper">
+    <select id="getUserInfo" resultType="com.login.bean.UserInfoBean" parameterType="com.login.data.LoginData">
+        SELECT userId,password
+        FROM users
+        WHERE userId = #{userId}
+        AND deleteFlg = '0'
+    </select>
+</mapper>

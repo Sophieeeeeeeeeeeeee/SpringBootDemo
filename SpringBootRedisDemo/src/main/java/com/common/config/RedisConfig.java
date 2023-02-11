@@ -2,6 +2,7 @@ package com.common.config;
 
 import com.common.utils.FastJson2JsonRedisSerializer;
 import com.common.utils.RedisTemplate;
+import com.common.utils.RedisUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -118,5 +119,18 @@ public class RedisConfig {
         // 开启事务
         redisTemplate.setEnableTransactionSupport(true);
         redisTemplate.setConnectionFactory(factory);
+    }
+
+    /**
+     * @param: [redisTemplate]
+     * @return: com.common.utils.RedisUtil
+     * @Description: 注入封装RedisTemplate
+     */
+    @Bean(name = "redisUtil")
+    public RedisUtil redisUtil(RedisTemplate redisTemplate) {
+        log.info("RedisUtil注入成功！");
+        RedisUtil redisUtil = new RedisUtil();
+        redisUtil.setRedisTemplate(redisTemplate);
+        return redisUtil;
     }
 }

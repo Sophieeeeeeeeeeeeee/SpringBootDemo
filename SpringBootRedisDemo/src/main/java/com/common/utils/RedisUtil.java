@@ -16,7 +16,6 @@ import org.springframework.util.CollectionUtils;
  */
 
 @Lazy
-@Component
 public class RedisUtil{
 
 	@Autowired
@@ -108,7 +107,6 @@ public class RedisUtil{
 			e.printStackTrace();
 			return false;
 		}
-
 	}
 
 	/**

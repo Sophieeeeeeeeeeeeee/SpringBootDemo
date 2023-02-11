@@ -1,6 +1,7 @@
 package com.redis.controller;
 
 import com.common.controller.BaseController;
+import com.common.utils.ConvertUtils;
 import com.common.utils.RedisConstants;
 import com.common.utils.RedisUtil;
 import com.common.utils.ResultConstants;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Map;
 
 /**
  * @Auther: csy
@@ -22,6 +24,9 @@ public class RedisController extends BaseController {
 
     @Autowired
     RedisUtil redisUtil;
+
+    @Autowired
+    ConvertUtils convertUtils;
 
     /**
      * @auther: csy
@@ -58,11 +63,10 @@ public class RedisController extends BaseController {
 
     /**
      * @auther: csy
-     * @param: []
      * @return: org.springframework.ui.ModelMap
      * @Description: 存储和读取用户信息
      */
-    @RequestMapping(value="/setUser")
+    @RequestMapping(value="/setuser")
     @ResponseBody
     public ModelMap setUser(){
         try {
@@ -70,15 +74,14 @@ public class RedisController extends BaseController {
             user.setName("csy");
             user.setAge(28);
             user.setId(getUuid());
-            redisUtil.set("user",user, RedisConstants.DATEBASE1);
-            UserEntity res = (UserEntity)redisUtil.get("user",RedisConstants.DATEBASE1);
+            redisUtil.hmset("user",convertUtils.objectToMap(user));
+            Map<Object, Object> res = redisUtil.hmget("user");
             logger.info("res="+res.toString());
             logger.info("读取redis成功");
-            return getModelMap(ResultConstants.SUCCESS, res, "操作成功");
+            return getModelMap(ResultConstants.SUCCESS, convertUtils.mapToObject(res,new UserEntity().getClass()), "操作成功");
         } catch (Exception e) {
             e.printStackTrace();
             return getModelMap(ResultConstants.FAULT, null, "操作失败");
         }
     }
-
 }

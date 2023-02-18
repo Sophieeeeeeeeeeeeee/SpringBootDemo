@@ -9,7 +9,7 @@
 
     <parent>
         <artifactId>SpringBootDemo</artifactId>
-        <groupId>com.csy</groupId>
+        <groupId>com.redis</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
